@@ -1,0 +1,26 @@
+<project>
+ <properties autorotation="0" encryptAssets="0" fps="60" scaleMode="4" mouseToTouch="1" iosDevice="0" packageName="com.yourdomain.yourapp" logicalHeight="480" logicalWidth="320" mouseTouchOrder="0" encryptCode="0" retinaDisplay="0" touchToMouse="1" assetsOnly="0" orientation="1" architecture="0">
+  <imageScales/>
+ </properties>
+ <file source="init.lua"/>
+ <file source="button.lua"/>
+ <file source="easing.lua"/>
+ <file source="scenemanager.lua"/>
+ <folder name="res">
+  <file source="res/f_zawgyi_one.ttf"/>
+  <file source="res/f_zawgyi_one.png"/>
+  <file source="res/f_zawgyi_one.txt"/>
+  <file source="res/s_game_over.wav"/>
+  <file source="res/m_theme.mp3"/>
+  <file source="res/i_play_btn_normal.png"/>
+  <file source="res/i_play_btn_pressed.png"/>
+  <file source="res/i_sprites.png"/>
+  <file source="res/i_sprites.txt"/>
+  <file source="res/i_game.jpg"/>
+ </folder>
+ <file source="Game.lua"/>
+ <file source="GameOver.lua"/>
+ <file source="Player.lua"/>
+ <file source="Enemy.lua"/>
+ <file source="main.lua"/>
+</project>
