@@ -14,9 +14,9 @@
    limitations under the License.
 ]]--
 
-Enemy = Core.class(Sprite)
+Blade = Core.class(Sprite)
 
-function Enemy:init()
+function Blade:init()
 	local img = Bitmap.new(g_sprites:getTextureRegion("i_sword_" .. math.random(3) .. ".png"))
 	img:setAnchorPoint(0.5, 0.5)
 	self:respawn()
@@ -24,14 +24,14 @@ function Enemy:init()
 	self:addEventListener(Event.ENTER_FRAME, self.onEnterFrame, self)
 end
 
-function Enemy:onEnterFrame(event)
+function Blade:onEnterFrame(event)
 	self:setY(self:getY() + self.velocity)
 	if (self:getY() > application:getContentHeight()) then
 		self:respawn()
 	end
 end
 
-function Enemy:respawn()
+function Blade:respawn()
 	self.velocity = 1 + math.random(6)
 	self:setPosition(math.random(application:getContentWidth()), 0)
 end

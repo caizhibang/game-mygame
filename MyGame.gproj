@@ -21,6 +21,6 @@
  <file source="Game.lua"/>
  <file source="GameOver.lua"/>
  <file source="Player.lua"/>
- <file source="Enemy.lua"/>
+ <file source="Blade.lua"/>
  <file source="main.lua"/>
 </project>

@@ -28,7 +28,7 @@ function Game:init()
 	self:addChild(self.player)
 
 	for i = 1, 8 do
-		self:addNewEnemy()
+		self:addNewBlade()
 	end
 
 	self.seconds = 0
@@ -49,17 +49,17 @@ function Game:init()
 	self:addEventListener(Event.MOUSE_MOVE, self.onMouseTouch, self)
 end
 
-function Game:addNewEnemy()
-	local enemy = Enemy.new()
-	self:addChild(enemy)
-	enemy:addEventListener(Event.ENTER_FRAME, function()
-		local enemyWidthHalf = enemy:getWidth() / 2
-		local enemyHeightHalf = enemy:getHeight() / 2
-		if (self.player:hitTestPoint(enemy:getX() - enemyWidthHalf, enemy:getY() - enemyHeightHalf)
-			or self.player:hitTestPoint(enemy:getX() - enemyWidthHalf, enemy:getY() + enemyHeightHalf)
-			or self.player:hitTestPoint(enemy:getX() + enemyWidthHalf, enemy:getY() - enemyHeightHalf)
-			or self.player:hitTestPoint(enemy:getX() + enemyWidthHalf, enemy:getY() + enemyHeightHalf)
-			or self.player:hitTestPoint(enemy:getX(), enemy:getY())
+function Game:addNewBlade()
+	local blade = Blade.new()
+	self:addChild(blade)
+	blade:addEventListener(Event.ENTER_FRAME, function()
+		local bladeWidthHalf = blade:getWidth() / 2
+		local bladeHeightHalf = blade:getHeight() / 2
+		if (self.player:hitTestPoint(blade:getX() - bladeWidthHalf, blade:getY() - bladeHeightHalf)
+			or self.player:hitTestPoint(blade:getX() - bladeWidthHalf, blade:getY() + bladeHeightHalf)
+			or self.player:hitTestPoint(blade:getX() + bladeWidthHalf, blade:getY() - bladeHeightHalf)
+			or self.player:hitTestPoint(blade:getX() + bladeWidthHalf, blade:getY() + bladeHeightHalf)
+			or self.player:hitTestPoint(blade:getX(), blade:getY())
 			) then
 			self.timer:stop()
 			g_sceneManager:changeScene("GameOver", 0, SceneManager.fade, easing.inOutQuadratic, {userData = self.seconds})
